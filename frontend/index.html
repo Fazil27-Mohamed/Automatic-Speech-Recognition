@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Automatic Speech Recognition</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+
+    <div class="bg">
+
+        <span class="circle c1"></span>
+        <span class="circle c2"></span>
+        <span class="circle c3"></span>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="glass-card">
+
+            <!-- Header -->
+
+            <div class="header">
+
+                <div class="logo">
+
+                    <i class="fa-solid fa-microphone-lines"></i>
+
+                </div>
+
+                <h1>Automatic Speech Recognition</h1>
+
+                <p>
+                    Convert speech into text using
+                    <span>Deep Learning</span>
+                </p>
+
+            </div>
+
+
+            <!-- Upload Card -->
+
+            <div class="section">
+
+                <h3>
+
+                    <i class="fa-solid fa-folder-open"></i>
+
+                    Upload Audio
+
+                </h3>
+
+                <label for="audioFile" class="upload-area">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    <h2>Choose Audio File</h2>
+
+                    <p>or Drag & Drop here</p>
+
+                    <small>.wav .mp3 .m4a</small>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="audioFile"
+                    accept=".wav,.mp3,.m4a"
+                    hidden>
+
+                <div class="file-card">
+
+                    <i class="fa-solid fa-file-audio"></i>
+
+                    <div>
+
+                        <h4 id="fileName">
+                            No File Selected
+                        </h4>
+
+                        <small id="fileSize">
+                            Waiting for audio...
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+
+            <!-- Record -->
+
+            <div class="section">
+
+                <h3>
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    Record Voice
+
+                </h3>
+
+                <div class="record-box">
+
+                    <div class="wave">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div id="recordStatus">
+
+                        Ready to Record
+
+                    </div>
+
+                    <div id="timer">
+
+                        00:00
+
+                    </div>
+
+                </div>
+
+                <div class="record-buttons">
+
+                    <button id="startRecord">
+
+                        <i class="fa-solid fa-microphone"></i>
+
+                        Start
+
+                    </button>
+
+                    <button id="stopRecord" disabled>
+
+                        <i class="fa-solid fa-stop"></i>
+
+                        Stop
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Convert -->
+
+            <button class="convert-btn" id="convertBtn">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Convert Speech to Text
+
+            </button>
+
+
+            <!-- Loading -->
+
+            <div class="loading" id="loading">
+
+                <div class="loader"></div>
+
+                <p>
+
+                    AI is processing your audio...
+
+                </p>
+
+            </div>
+
+
+            <!-- Transcript -->
+
+            <div class="section">
+
+                <h3>
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    Transcript
+
+                </h3>
+
+                <textarea
+                    id="transcript"
+                    placeholder="Transcript will appear here..."
+                    readonly></textarea>
+
+            </div>
+
+
+            <!-- Statistics -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <h2 id="wordCount">
+
+                        0
+
+                    </h2>
+
+                    <p>Words</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h2 id="charCount">
+
+                        0
+
+                    </h2>
+
+                    <p>Characters</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h2 id="language">
+
+                        EN
+
+                    </h2>
+
+                    <p>Language</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="bottom-buttons">
+
+                <button id="downloadBtn">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Download
+
+                </button>
+
+                <button id="copyBtn">
+
+                    <i class="fa-solid fa-copy"></i>
+
+                    Copy
+
+                </button>
+
+                <button id="clearBtn">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Clear
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+Flask
+openai-whisper
+torch
+torchaudio
+torchvision
+numpy
+pandas
+librosa
+soundfile
+ffmpeg-python
