@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: speech-to-text
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: WHISPER_MODEL
+        value: base
