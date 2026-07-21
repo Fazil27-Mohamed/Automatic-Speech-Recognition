@@ -27,7 +27,7 @@ torch.set_num_threads(1)
 # "tiny" (~75MB RAM) is the safest choice on a 512MB instance.
 # "base" (~290MB RAM) works too but leaves little headroom - if you see
 # the dyno crash/restart under load, switch this env var to "tiny" on Render.
-MODEL_SIZE = os.environ.get("WHISPER_MODEL", "base")
+MODEL_SIZE = os.environ.get("WHISPER_MODEL", "tiny")
 
 print(f"Loading Whisper model: {MODEL_SIZE} ...")
 model = whisper.load_model(MODEL_SIZE, device="cpu")
