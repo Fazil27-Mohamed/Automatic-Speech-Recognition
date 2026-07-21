@@ -4,6 +4,7 @@ FROM python:3.11-slim
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ffmpeg \
+    git \
     gcc \
     g++ && \
     rm -rf /var/lib/apt/lists/*
@@ -21,7 +22,7 @@ RUN pip install --no-cache-dir git+https://github.com/openai/whisper.git
 COPY . .
 
 # Download Whisper model during build
-ARG WHISPER_MODEL=base
+ARG WHISPER_MODEL=tiny
 ENV WHISPER_MODEL=${WHISPER_MODEL}
 
 RUN python -c "import os, whisper; whisper.load_model(os.environ['WHISPER_MODEL'])"
