@@ -3,5 +3,4 @@
 Flask==3.0.3
 gunicorn==22.0.0
 torch
-openai-whisper==20231117
 numpy==1.26.4
