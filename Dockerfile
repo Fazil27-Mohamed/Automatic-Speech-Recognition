@@ -12,11 +12,11 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-# Upgrade packaging tools before installing requirements
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+RUN pip install --upgrade pip setuptools wheel
 
-# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+RUN pip install --no-cache-dir git+https://github.com/openai/whisper.git
 
 COPY . .
 
