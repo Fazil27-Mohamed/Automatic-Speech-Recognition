@@ -32,9 +32,7 @@ EXPOSE 10000
 CMD gunicorn app:app \
     --bind 0.0.0.0:${PORT} \
     --workers 1 \
-    --timeout 300
     --threads 2 \
     --timeout 300 \
     --max-requests 20 \
-    --max-requests-jitter 5 \
-    --bind 0.0.0.0:$PORT
+    --max-requests-jitter 5
